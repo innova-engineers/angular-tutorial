@@ -1,0 +1,18 @@
+<div>
+  <table *ngFor="let emp of emps">
+    <tr>
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="name" required [(ngModel)]="name">
+    <span *ngIf="!form.controls['name'].valid">
+      *Required
+    </span>
+    <button type="submit">Submit</button>
+  </form>
+</div>
