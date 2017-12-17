@@ -1,0 +1,19 @@
+<div>
+  <table *ngFor="let emp of emps" (click)="onSelectEmployee(emp)">
+    <tr>
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+    </tr>
+  </table>
+</div>
+
+<!--
+<h3>Details Using Master-Detail in Same Component</h3>
+<div *ngIf="selectedEmp">
+<h4>{{selectedEmp.name | uppercase}} Details</h4>
+  <label>Employee ID : </label>{{selectedEmp.id}}
+</div>
+-->
+
+<h3>Details Using Master-Detail in Different Component</h3>
+<app-employee-detail [emp]="selectedEmp"></app-employee-detail>
